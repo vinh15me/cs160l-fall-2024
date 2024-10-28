@@ -9,6 +9,18 @@ import edu.sdsu.cs160l.university.lab5.course.Course;
 
 //TODO make this singleton
 public class CS340 implements Course {
+    private static CS340 cs340;
+
+    private CS340(){}
+
+    public static CS340 getInstance(){
+        if(cs340 == null){
+            cs340 = new CS340();
+        }
+        return cs340;
+    }
+
+
     @Override
     public String courseName() {
         return "CS340";

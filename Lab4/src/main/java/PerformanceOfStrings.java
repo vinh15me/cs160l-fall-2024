@@ -19,10 +19,13 @@ public class PerformanceOfStrings {
 
         //TODO initialize your StringBuilder here
         StringBuilder s;
+        s = new StringBuilder();
         long timeBeforeExec = System.nanoTime();
 
         //TODO Write your code here to loop over i to num and add "o" to string Builder
-
+        for(int i = 0; i < num; i++) {
+            s.append("o");
+        }
 
         long timeAfterExec = System.nanoTime();
 

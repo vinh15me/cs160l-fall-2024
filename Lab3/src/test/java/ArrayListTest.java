@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.*;
 
+import java.sql.Array;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -103,8 +104,12 @@ public class ArrayListTest {
         students.forEach(e -> System.out.println(e.toString()));
         System.out.println("Cloned Student List");
         clonedStudents.forEach(e -> System.out.println(e.toString()));
-
         // TODO: perform a deep copy of the eLst ArrayList by using the overridden Student clone method.
+        clonedStudents = new ArrayList<>();
+        for(int i = 0; i < students.size(); i++) {
+            clonedStudents.add(students.get(i).clone());
+        }
+        clonedStudents.forEach(e -> System.out.println("temp"+e.toString()));
         // After the deep copy implementation
         // in the cloned Student list, then use the same printout statements above to 
         // print out the original list and the cloned list
@@ -112,13 +117,21 @@ public class ArrayListTest {
         clonedStudents = new ArrayList<>();
 
         // TODO: write your code here to clone individual elements in students and add it to cloned students
+        Student[] studentArray = new Student[]{
+                new Student(825000001L, "Student 1", 3.1), // goes at index 0
+                new Student(825000002L, "Student 2", 3.2), // goes at index 1
+                new Student(825000003L, "Student 3", 3.3), // goes at index 2
+                new Student(825000004L, "Student 4", 3.4), // goes at index 3
+                new Student(825000005L, "Student 5", 3.5)  // goes at index 4
+        };
+        clonedStudents = new ArrayList<>(Arrays.asList(studentArray));
 
         // After cloning, Update cloned list
         clonedStudents.get(1).setName("Jennifer Hanks");
-        System.out.println("Student List");
+        System.out.println("Student List 2");
         // Second Student of the eLst Arraylist should still be test student 2
         students.forEach(e -> System.out.println(e.toString()));
-        System.out.println("Cloned Student List");
+        System.out.println("Cloned Student List 2");
         clonedStudents.forEach(e -> System.out.println(e.toString()));
     }
 
@@ -167,7 +180,16 @@ public class ArrayListTest {
         // a helpful method is .remove on the iterator interface :)
         Iterator<Student> it = students.iterator();
 
+        students.forEach(e -> System.out.println("Before: "+e.toString()));
         // TODO: write your code here to remove students with even redIds
+        for(int i = 0; i < students.size(); i++) {
+            if(students.get(i).getRedId() % 2 == 0) {
+                students.remove(students.get(i));
+            }
+        }
+        students.forEach(e -> System.out.println("After: "+e.toString()));
+
+
     }
 
     @Test

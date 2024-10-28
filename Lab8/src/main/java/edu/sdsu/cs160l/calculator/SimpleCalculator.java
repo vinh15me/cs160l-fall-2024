@@ -1,8 +1,11 @@
 package edu.sdsu.cs160l.calculator;
 
+
 /**
  * Do not implement/fix this class
  */
+
+/*
 public class SimpleCalculator implements Calculator {
     @Override
     public int add(int a, int b) {
@@ -24,3 +27,5 @@ public class SimpleCalculator implements Calculator {
         return 0;
     }
 }
+
+*/

@@ -2,7 +2,7 @@ package edu.sdsu.cs160l.university.lab5.application;
 
 //Template for application
 public interface UniversityApplication {
-    void submitScore(Applicant s, float score);
+    void submitScore(Applicant s, float score) throws Exception;
 
     void submitDocuments(Applicant s, String documents);
 

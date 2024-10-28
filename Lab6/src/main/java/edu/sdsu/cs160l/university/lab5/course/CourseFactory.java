@@ -16,11 +16,11 @@ public class CourseFactory {
             case "CS150":
                 return CS150.getInstance();
             case "CS160":
-                return new CS160();
+                return CS160.getInstance();
             case "CS210":
-                return new CS210();
+                return CS210.getInstance();
             case "CS340":
-                return new CS340();
+                return CS340.getInstance();
             default:
                 throw new UnsupportedOperationException("No course of the name "+ courseName +" found.");
         }

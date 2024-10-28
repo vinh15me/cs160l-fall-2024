@@ -8,6 +8,18 @@ import java.util.Set;
 import edu.sdsu.cs160l.university.lab5.course.Course;
 //TODO make this singleton
 public class CS210 implements Course{
+    private static CS210 cs210;
+
+    private CS210(){}
+
+    public static CS210 getInstance(){
+        if(cs210 == null){
+            cs210 = new CS210();
+        }
+        return cs210;
+    }
+
+
     @Override
     public String courseName() {
         return "CS210";

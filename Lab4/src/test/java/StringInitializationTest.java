@@ -30,6 +30,10 @@ public class StringInitializationTest {
         String b = "hey";
 
         //TODO write a suitable test to check equality of these strings
+        assertTrue(a==b);
+        if(a.equals(b)){
+            System.out.println("A matches B");
+        }
     }
 
     @Test
@@ -37,6 +41,11 @@ public class StringInitializationTest {
         String[] a = {"java", "c++", "javascript"};
         String[] b = {"java", "c++", "javascript"};
 
+        for(int index = 0; index < a.length; index++){
+            if(a[index].equals(b[index])){
+                System.out.println("A at index " + index + " matches B at index " + index);
+            }
+        }
         //TODO write a suitable test to check equality of these string arrays
 
     }
@@ -51,7 +60,8 @@ public class StringInitializationTest {
         System.out.println(data1[0] == new String(data2[0]));
 
         //TODO convert below prints to asserts
-        System.out.println(data1[0].equals(testString));
-        System.out.println(data1[0].equals(new String(testString)));
+        assertTrue((data1[0].equals(testString)));
+        assertTrue(data1[0].equals(new String(testString)));
+        System.out.println("Completed Assert Test.");
     }
 }

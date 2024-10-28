@@ -37,9 +37,20 @@ public class Registrar {
         //TODO check if courseName is a valid courseName if not throw a new NoSuchCourseException
         // you may use the isValidCourse function
 
+        try
+        {
+            if(isNotValidCourse(courseName))
+            {
+                throw new NoSuchCourseException();
+            }
 
-        Course course = courseList.get(courseName);
-        course.addStudent(student);
+            Course course = courseList.get(courseName);
+            course.addStudent(student);
+        }
+        catch (NoSuchCourseException e)
+        {
+            System.out.println("Course entered is not a valid course.");
+        }
     }
 
     /**

@@ -1,7 +1,5 @@
 package edu.sdsu.cs160l.datastructure.queue;
 
-import jdk.javadoc.internal.tool.JavadocTodo;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
